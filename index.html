@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="calcBody">
+        <div id="display"></div>
+        <div id="buttonHolder">
+            <div class="buttonRow">
+                <button onclick="clearValue()">AC</button>
+                <button>+/-</button>
+                <button>%</button>
+                <button id="operation" class="divide">/</button>
+            </div>
+            <div class="buttonRow">
+                <button onclick="input += '7'">7</button>
+                <button onclick="input += '8'">8</button>
+                <button onclick="input += '9'">9</button>
+                <button id="operation" class="multiply">*</button>
+            </div>
+            <div class="buttonRow">
+                <button onclick="input += '4'">4</button>
+                <button onclick="input += '5'">5</button>
+                <button onclick="input += '6'">6</button>
+                <button id="operation" class="subtract">-</button>
+            </div>
+            <div class="buttonRow">
+                <button onclick="input += '1'">1</button>
+                <button onclick="input += '2'">2</button>
+                <button onclick="input += '3'">3</button>
+                <button id="operation" class="add">+</button>
+            </div>
+            <div class="buttonRow">
+                <button onclick="input += '0'"class="zero">0</button>
+                <button>.</button>
+                <button onclick="">=</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

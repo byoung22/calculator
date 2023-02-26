@@ -1,0 +1,35 @@
+* {
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+#calcBody {
+    display: flex;
+    height: 720px;
+    width: 480px;
+    flex-direction: column;
+}
+#display {
+    flex: 1;
+    margin: 30px;
+}
+#buttonHolder {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+button {
+    margin: 15px;
+    flex: 1;
+}
+.buttonRow {
+    display: flex;
+    justify-content:space-evenly;
+    flex: 1;
+}
+.zero {
+    flex: 2;
+}
