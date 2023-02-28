@@ -7,14 +7,22 @@ body {
     justify-content: center;
 }
 #calcBody {
+    background-color: black;
+    border-radius: 50px;
     display: flex;
-    height: 720px;
+    height: 840px;
     width: 480px;
     flex-direction: column;
 }
 #display {
+    font-size: 80px;
+    color: aliceblue;
     flex: 1;
-    margin: 30px;
+    margin: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    overflow: hidden;
 }
 #buttonHolder {
     flex: 3;
@@ -22,12 +30,24 @@ body {
     flex-direction: column;
 }
 button {
+    color: aliceblue;
+    background-color: rgb(56, 56, 56);
+    font-size: 25px;
     margin: 15px;
     flex: 1;
+    border: 0;
+    border-radius: 100vh;
+}
+.buttonRow .top {
+    color: black;
+    background-color: rgb(174, 174, 174);
 }
 .buttonRow {
     display: flex;
     flex: 1;
+}
+#operation, .equal{
+    background-color: darkorange;
 }
 .zero {
     flex: 2;

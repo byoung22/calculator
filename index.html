@@ -10,12 +10,12 @@
 </head>
 <body>
     <div id="calcBody">
-        <div id="display">0</div>
+        <div id="display"></div>
         <div id="buttonHolder">
             <div class="buttonRow">
-                <button onclick="clearValue()">AC</button>
-                <button>+/-</button>
-                <button>%</button>
+                <button class="top" onclick="clearValue()">AC</button>
+                <button class="top" id="sign" onclick="changeSign(display)">+/-</button>
+                <button class="top" id="percentage" onclick="changePercent(display)">%</button>
                 <button id="operation" class="divide">/</button>
             </div>
             <div class="buttonRow">
@@ -38,8 +38,8 @@
             </div>
             <div class="buttonRow">
                 <button onclick="display += '0'"class="zero">0</button>
-                <button>.</button>
-                <button onclick="equal(firstValue, secondValue)">=</button>
+                <button onclick="if (!decimalAdded) display += '.'" id="decimal">.</button>
+                <button class="equal" onclick="equal(firstValue, secondValue)">=</button>
             </div>
         </div>
     </div>

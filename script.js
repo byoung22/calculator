@@ -2,10 +2,20 @@ let operation;
 let firstValue;  // Saved value
 let secondValue; // Whatever second input is
 let display = '';  // The number being displayted
+let decimalAdded = false;
 
 const displayContainer = document.querySelector('#display');
 const buttons = document.querySelectorAll('button');
 const operations = document.querySelectorAll('#operation');
+const decimal = document.getElementById('decimal')
+
+decimal.addEventListener('click', function() {
+    if (decimalAdded) {
+        return;
+    } else {
+        decimalAdded = true;
+    }
+});
 
 // Updates display every button clicked
 buttons.forEach((button) => {
@@ -34,7 +44,8 @@ function equal(a, b) {
     b = display;
     display = operate(a, b);
     displayContainer.textContent = display;
-
+    firstValue = '';
+    secondValue = '';
 }
 
 function operate(a, b) {
@@ -53,31 +64,40 @@ function operate(a, b) {
 
 function add(a, b) {
     let c;
-    c = parseInt(a) + parseInt(b);
+    c = parseFloat(a) + parseFloat(b);
     toString(c);
     return c;
 }
 function subtract(a, b) {
     let c;
-    c = parseInt(a) - parseInt(b);
+    c = parseFloat(a) - parseFloat(b);
     toString(c);
     return c;
 }
 function multiply(a, b) {
     let c;
-    c = parseInt(a) * parseInt(b);
+    c = parseFloat(a) * parseFloat(b);
     toString(c);
     return c;
 }
 function divide(a, b) {
     let c;
-    c = parseInt(a) / parseInt(b);
+    c = parseFloat(a) / parseFloat(b);
     toString(c);
     return c;
+}
+function changeSign(n) {
+    displayContainer.textContent = -n;
+    return display = -n;
+}
+function changePercent(n) {
+    n = n / 100;
+    return display = n;
 }
 function clearValue() {
     operation = '';
     firstValue = '';
     secondValue = '';
     display = '';
+    decimalAdded = false;
 }
