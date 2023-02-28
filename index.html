@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="calcBody">
-        <div id="display"></div>
+        <div id="display">0</div>
         <div id="buttonHolder">
             <div class="buttonRow">
                 <button onclick="clearValue()">AC</button>
@@ -19,27 +19,27 @@
                 <button id="operation" class="divide">/</button>
             </div>
             <div class="buttonRow">
-                <button onclick="input += '7'">7</button>
-                <button onclick="input += '8'">8</button>
-                <button onclick="input += '9'">9</button>
+                <button onclick="display += '7'">7</button>
+                <button onclick="display += '8'">8</button>
+                <button onclick="display += '9'">9</button>
                 <button id="operation" class="multiply">*</button>
             </div>
             <div class="buttonRow">
-                <button onclick="input += '4'">4</button>
-                <button onclick="input += '5'">5</button>
-                <button onclick="input += '6'">6</button>
+                <button onclick="display += '4'">4</button>
+                <button onclick="display += '5'">5</button>
+                <button onclick="display += '6'">6</button>
                 <button id="operation" class="subtract">-</button>
             </div>
             <div class="buttonRow">
-                <button onclick="input += '1'">1</button>
-                <button onclick="input += '2'">2</button>
-                <button onclick="input += '3'">3</button>
+                <button onclick="display += '1'">1</button>
+                <button onclick="display += '2'">2</button>
+                <button onclick="display += '3'">3</button>
                 <button id="operation" class="add">+</button>
             </div>
             <div class="buttonRow">
-                <button onclick="input += '0'"class="zero">0</button>
+                <button onclick="display += '0'"class="zero">0</button>
                 <button>.</button>
-                <button onclick="">=</button>
+                <button onclick="equal(firstValue, secondValue)">=</button>
             </div>
         </div>
     </div>

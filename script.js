@@ -1,44 +1,83 @@
 let operation;
-let array = [];  //Holds 2 values
-let input = '';  // The number being inputted
+let firstValue;  // Saved value
+let secondValue; // Whatever second input is
+let display = '';  // The number being displayted
 
-const display = document.querySelector('#display');
+const displayContainer = document.querySelector('#display');
 const buttons = document.querySelectorAll('button');
 const operations = document.querySelectorAll('#operation');
 
 // Updates display every button clicked
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {display.textContent = input})
+    button.addEventListener('click', () => {displayContainer.textContent = display})
 });
 
+operations.forEach((operationOption) => {
+    operationOption.addEventListener('click', () => {
+        if (!firstValue) {
+            operation = operationOption.getAttribute('class');
+            firstValue = display;
+            display = '';
+            displayContainer.textContent = display;
+        } else {
+            secondValue = display;
+            display = operate(firstValue, secondValue);
+            operation = operationOption.getAttribute('class');
+            firstValue = display;
+            displayContainer.textContent = display;
+            display = '';
+        }
+    });
+});
 
+function equal(a, b) {
+    b = display;
+    display = operate(a, b);
+    displayContainer.textContent = display;
 
-function operate(array) {
+}
+
+function operate(a, b) {
     if (operation == 'add') {
-        return add(array);
+        return add(a, b);
     } else if (operation == 'subtract') {
-        return subtract(array);
+        return subtract(a, b);
     } else if (operation == 'multiply') {
-        return multiply(array);
+        return multiply(a, b);
     } else if (operation == 'divide') {
-        return divide(array);
+        return divide(a, b);
     } else {
+        return firstValue;
     }
 }
-function add(array) {
-    return array[0] + array[1];
+
+function add(a, b) {
+    let c;
+    c = parseInt(a) + parseInt(b);
+    toString(c);
+    return c;
 }
-function subtract(array) {
-    return array[0] - array[1];
+function subtract(a, b) {
+    let c;
+    c = parseInt(a) - parseInt(b);
+    toString(c);
+    return c;
 }
-function multiply(array) {
-    return array[0] * array[1];
+function multiply(a, b) {
+    let c;
+    c = parseInt(a) * parseInt(b);
+    toString(c);
+    return c;
 }
-function divide(array) {
-    return array[0] / array[1];
+function divide(a, b) {
+    let c;
+    c = parseInt(a) / parseInt(b);
+    toString(c);
+    return c;
 }
 function clearValue() {
     operation = '';
-    array = [];
-    input = '';
+    firstValue = '';
+    secondValue = '';
+    display = '';
 }
